@@ -32,3 +32,15 @@ def two_words(password):
             if (phrase == password):
                 return True, guesses
   return False, guesses
+
+
+def two_word_and_digit(password):
+  words = get_dictionary()
+  guesses = 0
+  for w in words:
+    for x in words:
+      for y in range(10):
+        guesses += 1
+        if password == str(w,x,y):
+          return True, guesses
+  return False, guesses
